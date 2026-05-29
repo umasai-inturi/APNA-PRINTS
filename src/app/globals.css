@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-inter);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root, .dark {
+  /* Dark Royal Blue Background */
+  --background: #0B1F3A;
+  --foreground: #F8FAFC;
+  
+  /* Slightly lighter for cards */
+  --card: #112A4D;
+  --card-foreground: #F8FAFC;
+  
+  --popover: #112A4D;
+  --popover-foreground: #F8FAFC;
+  
+  /* Gold Accent as Primary */
+  --primary: #D4AF37;
+  --primary-foreground: #0B1F3A;
+  
+  /* Muted dark blue */
+  --secondary: #1E3A5F;
+  --secondary-foreground: #F8FAFC;
+  
+  --muted: #1E3A5F;
+  --muted-foreground: #94A3B8;
+  
+  /* Accent matches Gold */
+  --accent: #D4AF37;
+  --accent-foreground: #0B1F3A;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #F8FAFC;
+  
+  --border: #1E3A5F;
+  --input: #1E3A5F;
+  --ring: #D4AF37;
+  
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #D4AF37;
+  color: #0B1F3A;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1F3A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A5F;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
